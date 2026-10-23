@@ -34,10 +34,6 @@
             <p>A workspace for clubs and small organizations to manage members, events, and attendance in one place, with Google sign-in and QR check-in.</p>
             <dl class="stats">
               <div>
-                <dt>Users</dt>
-                <dd id="stat-users">&ndash;</dd>
-              </div>
-              <div>
                 <dt>Organizations</dt>
                 <dd id="stat-organizations">&ndash;</dd>
               </div>
@@ -78,7 +74,6 @@
       fetch("https://minicampos.onrender.com/api/stats")
         .then((r) => (r.ok ? r.json() : Promise.reject()))
         .then((d) => {
-          document.getElementById("stat-users").textContent = d.users.toLocaleString();
           document.getElementById("stat-organizations").textContent = d.organizations.toLocaleString();
         })
         .catch(() => {});

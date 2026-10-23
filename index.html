@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>minakovii</title>
+    <meta name="description" content="Projects by minakovii.">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./">minakovii</a>
+      <nav class="nav">
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <h1>minakovii</h1>
+        <p class="summary">I build tools that make things a little easier for the people around me, and I'm interested in security, system design, machine learning, and game development.</p>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+
+        <div class="grid">
+          <a class="card" href="https://minicampos.onrender.com" target="_blank" rel="noopener">
+            <div class="card-head">
+              <h3>MinicampOS</h3>
+              <span class="tag">Live</span>
+            </div>
+            <p>A workspace for clubs and small organizations to manage members, events, and attendance in one place, with Google sign-in and QR check-in.</p>
+            <dl class="stats">
+              <div>
+                <dt>Users</dt>
+                <dd id="stat-users">&ndash;</dd>
+              </div>
+              <div>
+                <dt>Organizations</dt>
+                <dd id="stat-organizations">&ndash;</dd>
+              </div>
+            </dl>
+            <span class="card-link">Visit site <span aria-hidden="true">&rarr;</span></span>
+          </a>
+
+          <div class="card card-soon">
+            <div class="card-head">
+              <h3>ContextVuln</h3>
+              <span class="tag">Coming soon</span>
+            </div>
+            <p>Ranking software vulnerabilities by how likely they are to be exploited, using the text of each report.</p>
+          </div>
+        </div>
+      </section>
+      <section class="projects" id="contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Contact</h2>
+        <p class="section-note">Want to talk about a project or work on something together?</p>
+        <p id="contact-slot"><button class="contact-button" type="button" id="show-email">Show email</button></p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span id="year">2026</span> minakovii</p>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+      document.getElementById("show-email").addEventListener("click", () => {
+        const address = ["minakoyuuu", "gmail.com"].join("@");
+        const link = document.createElement("a");
+        link.className = "contact-email";
+        link.href = "mailto:" + address;
+        link.textContent = address;
+        document.getElementById("contact-slot").replaceChildren(link);
+      });
+      fetch("https://minicampos.onrender.com/api/stats")
+        .then((r) => (r.ok ? r.json() : Promise.reject()))
+        .then((d) => {
+          document.getElementById("stat-users").textContent = d.users.toLocaleString();
+          document.getElementById("stat-organizations").textContent = d.organizations.toLocaleString();
+        })
+        .catch(() => {});
+    </script>
+  </body>
+</html>

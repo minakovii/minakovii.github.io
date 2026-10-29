@@ -191,6 +191,38 @@ a.card:hover { border-color: #c8c8c8; }
 
 .footer p { margin: 0; }
 
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 22px;
+}
+
+.tab {
+  padding: 7px 12px;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  background: transparent;
+  color: #4b5563;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.tab:hover { background: #f6f6f6; }
+
+.tab[aria-selected="true"] {
+  border-color: #202124;
+  color: #202124;
+  font-weight: 600;
+}
+
+.tab:focus-visible {
+  outline: 2px solid #202124;
+  outline-offset: 2px;
+}
+
+.panel[hidden] { display: none; }
 @media (max-width: 640px) {
   .intro { padding: 64px 0 40px; }
   .grid { grid-template-columns: 1fr; }

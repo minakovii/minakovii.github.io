@@ -22,33 +22,127 @@
         <p class="summary">I build tools that make things a little easier for the people around me, and I'm interested in security, system design, machine learning, and game development.</p>
       </section>
 
-      <section class="projects" id="projects" aria-labelledby="projects-title">
-        <h2 id="projects-title">Projects</h2>
+      <section class="projects" id="projects" aria-label="Work">
+        <div class="tabs" role="tablist" aria-label="Sections">
+          <button class="tab" type="button" role="tab" id="tab-projects" aria-controls="panel-projects" aria-selected="true">Projects</button>
+          <button class="tab" type="button" role="tab" id="tab-mini" aria-controls="panel-mini" aria-selected="false" tabindex="-1">Mini projects</button>
+          <button class="tab" type="button" role="tab" id="tab-now" aria-controls="panel-now" aria-selected="false" tabindex="-1">Working on</button>
+          <button class="tab" type="button" role="tab" id="tab-notes" aria-controls="panel-notes" aria-selected="false" tabindex="-1">Notes</button>
+          <button class="tab" type="button" role="tab" id="tab-interests" aria-controls="panel-interests" aria-selected="false" tabindex="-1">Interests</button>
+          <button class="tab" type="button" role="tab" id="tab-mini-interests" aria-controls="panel-mini-interests" aria-selected="false" tabindex="-1">Mini interests</button>
+          <button class="tab" type="button" role="tab" id="tab-art" aria-controls="panel-art" aria-selected="false" tabindex="-1">Art</button>
+        </div>
 
-        <div class="grid">
-          <a class="card" href="https://minicampos.onrender.com" target="_blank" rel="noopener">
-            <div class="card-head">
-              <h3>MinicampOS</h3>
-              <span class="tag">Live</span>
-            </div>
-            <p>A workspace for clubs and small organizations to manage members, events, and attendance in one place, with Google sign-in and QR check-in.</p>
-            <dl class="stats">
-              <div>
-                <dt>Organizations</dt>
-                <dd id="stat-organizations">&ndash;</dd>
+        <div class="panel" role="tabpanel" id="panel-projects" aria-labelledby="tab-projects">
+          <div class="grid">
+            <a class="card" href="https://minicampos.onrender.com" target="_blank" rel="noopener">
+              <div class="card-head">
+                <h3>MinicampOS</h3>
+                <span class="tag">Live</span>
               </div>
-            </dl>
-            <span class="card-link">Visit site <span aria-hidden="true">&rarr;</span></span>
-          </a>
+              <p>A site for clubs to manage members, events, and attendance. Has Google sign-in and QR check-in.</p>
+              <dl class="stats">
+                <div>
+                  <dt>Organizations</dt>
+                  <dd id="stat-organizations">&ndash;</dd>
+                </div>
+              </dl>
+              <span class="card-link">Visit site <span aria-hidden="true">&rarr;</span></span>
+            </a>
 
-          <a class="card" href="https://contextvuln.onrender.com" target="_blank" rel="noopener">
-            <div class="card-head">
-              <h3>ContextVuln</h3>
-              <span class="tag">Live</span>
+            <a class="card" href="https://contextvuln.onrender.com" target="_blank" rel="noopener">
+              <div class="card-head">
+                <h3>ContextVuln</h3>
+                <span class="tag">Live</span>
+              </div>
+              <p>Shows which vulnerabilities to patch first using real exploit data, not just severity. Might take a minute to load up.</p>
+              <span class="card-link">Visit site <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-mini" aria-labelledby="tab-mini" hidden>
+          <div class="grid">
+            <div class="card">
+              <h3>TBA</h3>
+
             </div>
-            <p>Ranks which software vulnerabilities to patch first, using real exploit data instead of severity alone. The first visit can take about a minute to wake up.</p>
-            <span class="card-link">Visit site <span aria-hidden="true">&rarr;</span></span>
-          </a>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-now" aria-labelledby="tab-now" hidden>
+          <div class="grid">
+            <div class="card">
+              <div class="card-head">
+                <h3>AI agent red-teaming tool</h3>
+                <span class="tag">Planning</span>
+              </div>
+              <p>Testing if AI agents can be tricked into doing stuff they shouldn't.</p>
+            </div>
+            <div class="card">
+              <div class="card-head">
+                <h3>Series glossary extension</h3>
+                <span class="tag">Planning</span>
+              </div>
+              <p>A browser extension to keep track of terms in manhwa and novels.</p>
+            </div>
+            <div class="card">
+              <div class="card-head">
+                <h3>File converter</h3>
+                <span class="tag">Planning</span>
+              </div>
+              <p>MP4 to GIF, and PDF/Word files that don't break in Google Docs.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-notes" aria-labelledby="tab-notes" hidden>
+          <div class="grid">
+            <a class="card" href="https://contextvuln.onrender.com/methodology" target="_blank" rel="noopener">
+              <div class="card-head">
+                <h3>How ContextVuln works</h3>
+                <span class="tag">Write-up</span>
+              </div>
+              <p>How the ContextVuln score works and the ML experiment I tried.</p>
+              <span class="card-link">Read <span aria-hidden="true">&rarr;</span></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-interests" aria-labelledby="tab-interests" hidden>
+          <div class="grid">
+            <div class="card">
+              <h3>Security</h3>
+              <p>Finding vulnerabilities and AI security.</p>
+            </div>
+            <div class="card">
+              <h3>Machine learning</h3>
+              <p>Training models and testing them.</p>
+            </div>
+            <div class="card">
+              <h3>Game AI</h3>
+              <p>NPCs that adapt to player behavior and movement.</p>
+            </div>
+            <div class="card">
+              <h3>Systems</h3>
+              <p>System design, low-level code, embedded, aerospace.</p>
+            </div>
+          </div>
+        </div>
+        <div class="panel" role="tabpanel" id="panel-mini-interests" aria-labelledby="tab-mini-interests" hidden>
+          <div class="grid">
+            <div class="card">
+              <h3>TBA</h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="panel-art" aria-labelledby="tab-art" hidden>
+          <div class="grid">
+            <div class="card">
+              <h3>TBA</h3>
+            </div>
+          </div>
         </div>
       </section>
       <section class="projects" id="contact" aria-labelledby="contact-title">
@@ -72,7 +166,24 @@
         link.textContent = address;
         document.getElementById("contact-slot").replaceChildren(link);
       });
-      fetch("https://minicampos.onrender.com/api/stats")
+      const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+      function selectTab(tab) {
+        tabs.forEach((t) => {
+          const on = t === tab;
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          t.tabIndex = on ? 0 : -1;
+          document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+        });
+      }
+      tabs.forEach((tab, i) => {
+        tab.addEventListener("click", () => selectTab(tab));
+        tab.addEventListener("keydown", (e) => {
+          if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
+          const next = tabs[(i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length];
+          selectTab(next);
+          next.focus();
+        });
+      });      fetch("https://minicampos.onrender.com/api/stats")
         .then((r) => (r.ok ? r.json() : Promise.reject()))
         .then((d) => {
           document.getElementById("stat-organizations").textContent = d.organizations.toLocaleString();
